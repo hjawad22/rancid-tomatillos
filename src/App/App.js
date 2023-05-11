@@ -1,6 +1,7 @@
 import movieData from '../movieData';
 import React, {Component} from 'react';
-import Movies from '../Movies/Movies'
+import Movies from '../Movies/Movies';
+import Nav from '../Nav/Nav';
 import '../App/App.css';
 
 class App extends Component {
@@ -14,11 +15,13 @@ class App extends Component {
 
 render() {
     return (
+        <>
+        <Nav/>
         <main className='App'> 
-        <h1>Hello</h1>
         <Movies movies={this.state.movies}/>
         </main>
-    )
+        </>
+    )}
 }
-}
+
 export default App;
