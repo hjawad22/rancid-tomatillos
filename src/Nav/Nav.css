@@ -1,0 +1,10 @@
+.Nav {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(160, 24, 24);
+    color: white;
+  }
+
+  h3 {
+    margin: 0;
+  }
