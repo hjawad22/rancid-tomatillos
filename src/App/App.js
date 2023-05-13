@@ -45,7 +45,7 @@ class App extends Component {
            console.error("There was a problem with the fetch", error)
         })
     }
-    
+
     switchState = () => {
         this.setState({movie: null})
     }
@@ -55,11 +55,21 @@ render() {
         return (
         <>
         <Nav/>
-        <main className='movie-description'>
-            {console.log(this.state.movie)}
-        <h1>{this.state.movie.title}</h1>
-        <img className='single-image' src={this.state.movie.poster_path} alt={this.state.movie.title}/>
+        <main className='movie-container'>
+        <article className='image-container'>
+        <h1>{this.state.movie.movie.title}</h1>
+        <img className='single-image' src={this.state.movie.movie.poster_path} alt={this.state.movie.movie.title}/>
+        <p>Rating: {this.state.movie.movie.average_rating}</p>
+        <p>Runtime: {this.state.movie.movie.runtime}</p>
+        <p>Revenue: ${this.state.movie.movie.revenue}</p>
+        <p>Release Date: {this.state.movie.movie.release_date}</p>
         <button className='back-button' onClick={() => this.switchState()}>Back to Movies</button>
+        </article>
+        <article className='description-container'>
+        <h3>Movie Overview</h3>
+        <p>{this.state.movie.movie.overview}</p>
+        <p>"{this.state.movie.movie.tagline}"</p>
+        </article>
         </main>
         </>
         )
