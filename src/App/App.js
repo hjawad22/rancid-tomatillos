@@ -52,23 +52,24 @@ class App extends Component {
 
 render() {
     if(this.state.movie) {
+        const {movie} = this.state.movie
         return (
         <>
         <Nav/>
         <main className='movie-container'>
         <article className='image-container'>
-        <h1>{this.state.movie.movie.title}</h1>
-        <img className='single-image' src={this.state.movie.movie.poster_path} alt={this.state.movie.movie.title}/>
-        <p>Rating: {this.state.movie.movie.average_rating}</p>
-        <p>Runtime: {this.state.movie.movie.runtime}</p>
-        <p>Revenue: ${this.state.movie.movie.revenue}</p>
-        <p>Release Date: {this.state.movie.movie.release_date}</p>
+        <h1>{movie.title}</h1>
+        <img className='single-image' src={movie.poster_path} alt={movie.title}/>
+        <p>Rating: {movie.average_rating}</p>
+        <p>Runtime: {movie.runtime}</p>
+        <p>Revenue: ${Intl.NumberFormat().format(movie.revenue)}</p>
+        <p>Release Date: {movie.release_date}</p>
         <button className='back-button' onClick={() => this.switchState()}>Back to Movies</button>
         </article>
         <article className='description-container'>
         <h3>Movie Overview</h3>
-        <p>{this.state.movie.movie.overview}</p>
-        <p>"{this.state.movie.movie.tagline}"</p>
+        <p>{movie.overview}</p>
+        <p>"{movie.tagline}"</p>
         </article>
         </main>
         </>
