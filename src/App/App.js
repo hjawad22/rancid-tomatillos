@@ -31,10 +31,21 @@ class App extends Component {
 
     getMovieById = (id) => {
         const filteredMovie = this.state.movies.find(movie => movie.id === id)
-        this.setState({movie: filteredMovie})
-        console.log("filteredMovies", filteredMovie)
-    }
 
+        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2//movies/${filteredMovie.id}/`)
+        .then(res => {
+           if(!res.ok) {
+               throw new Error('Failed to fetch the movie')
+           }
+           return res.json()})
+        .then(filteredMovieData => this.setState({
+           movie: filteredMovieData
+        }))
+        .catch(error => {
+           console.error("There was a problem with the fetch", error)
+        })
+    }
+    
     switchState = () => {
         this.setState({movie: null})
     }
