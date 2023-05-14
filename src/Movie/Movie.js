@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Movie/Movie.css';
+import PropTypes from 'prop-types'
 
 const Movie = ({id, title, rating, image, releaseDate, imageBackdrop, getMovieById}) => {
 // console.log(id,getMovieById)
@@ -18,3 +19,12 @@ const Movie = ({id, title, rating, image, releaseDate, imageBackdrop, getMovieBy
 
 
 export default Movie;
+
+Movie.propTypes = {
+    id: PropTypes.number,
+    title: PropTypes.string,
+    rating: PropTypes.number,
+    image: PropTypes.string,
+    releaseDate: PropTypes.string,
+    getMovieById: PropTypes.func,
+}
