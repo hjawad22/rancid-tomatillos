@@ -11,7 +11,7 @@ const Movie = ({id, title, rating, image, releaseDate, imageBackdrop, getMovieBy
             <img className='movie-image' src= {image} alt= {title}/>
             <p>Release Date: {releaseDate}</p>
             <p>Rating: {Math.round(rating)}</p>
-            <button onClick={() => getMovieById(id)}>View Details</button>
+            <button className='view-button' onClick={() => getMovieById(id)}>View Details</button>
         </div>
     )
 }
