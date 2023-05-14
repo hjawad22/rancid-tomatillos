@@ -1,4 +1,3 @@
-import movieData from '../movieData';
 import React, {Component} from 'react';
 import Movies from '../Movies/Movies';
 import Nav from '../Nav/Nav';
@@ -8,7 +7,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            movies: movieData.movies,
+            movies: [],
             movie: null
         }
         console.log(this.state.movies)
@@ -68,8 +67,8 @@ render() {
         </article>
         <article className='description-container'>
         <h3>Movie Overview</h3>
-        <p>{movie.overview}</p>
-        <p>"{movie.tagline}"</p>
+        <p className='overview'>{movie.overview}</p>
+        <p className='tagline'>"{movie.tagline}"</p>
         </article>
         </main>
         </>
