@@ -59,8 +59,12 @@ class App extends Component {
 
 render() {
     if(this.state.movie) {
-        <SingleMovie movie={this.state.movie} switchState={this.switchState} /> 
-    }
+      return ( 
+        <>
+      <Nav/>
+      <SingleMovie movie={this.state.movie} switchState={this.switchState} /> 
+      </>
+      )}
     return (
         <>
         <Nav/>
