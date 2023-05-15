@@ -34,7 +34,24 @@
 .back-button {
   width: 200px;
   height: 35px;
-  border-radius: 10px;
+  border-radius: 100vw;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: rgb(24, 143, 158);
+  color: white;
+  font-weight: bold;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: x-large;
+  color: red;
+  font-weight: 600;
 }
 
 
