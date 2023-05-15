@@ -10,7 +10,7 @@ describe('Homepage Spec', () => {
 
   it('should display a title on the homepage', () => {
     cy.visit('http://localhost:3000/')
-    cy.contains('This is a Logo')
+    cy.contains('Flick Finder')
   })
 
   it('should display all movies', () => {
