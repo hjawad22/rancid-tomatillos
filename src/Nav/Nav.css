@@ -1,10 +1,14 @@
 .Nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100px;
     background-color: rgb(160, 24, 24);
     color: white;
   }
 
-  h3 {
+  .title {
     margin: 0;
+    font-size: 75px;
   }

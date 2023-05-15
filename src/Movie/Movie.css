@@ -3,13 +3,29 @@
     border: 3px solid rgb(158, 25, 8);
     padding: 10px;
     color: rgb(7, 7, 1);
+    box-shadow: 0 0 10px rgba(158, 25, 8, .8);
   }
 
   .movie-image {
     width: 200px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
 /* .image-backdrop {
   width: 50%;
   height: 50%;
 } */
+
+.view-button {
+  border-radius: 100vw;
+  width: 150px;
+  height: 35px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.view-button:hover {
+  background-color: rgb(24, 143, 158);
+  color: white;
+  font-weight: bold;
+}

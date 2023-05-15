@@ -8,7 +8,8 @@ class App extends Component {
         super();
         this.state = {
             movies: [],
-            movie: null
+            movie: null,
+            errorMessage: ''
         }
         console.log(this.state.movies)
     }
@@ -25,6 +26,9 @@ class App extends Component {
         }))
         .catch(error => {
            console.error("There was a problem with the fetch", error)
+           this.setState({
+            errorMessage: `Error: ${error.message}`
+           })
         })
     }
 
@@ -34,7 +38,7 @@ class App extends Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2//movies/${filteredMovie.id}/`)
         .then(res => {
            if(!res.ok) {
-               throw new Error('Failed to fetch the movie')
+               throw new Error('Failed to display movie details please try again!')
            }
            return res.json()})
         .then(filteredMovieData => this.setState({
@@ -42,6 +46,9 @@ class App extends Component {
         }))
         .catch(error => {
            console.error("There was a problem with the fetch", error)
+           this.setState({
+            errorMessage: `Error: ${error.message}`
+           })
         })
     }
 
@@ -77,6 +84,7 @@ render() {
     return (
         <>
         <Nav/>
+        <span className="error">{this.state.errorMessage}</span>
         <main className='App'>
         <Movies movies={this.state.movies} getMovieById={this.getMovieById}/>
         </main>

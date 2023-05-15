@@ -4,7 +4,7 @@ import '../Nav/Nav.css'
 function Nav() {
     return (
         <nav className = 'Nav'>
-            <h3>This is a Logo</h3>
+            <h1 className='title'>Flick Finder</h1>
         </nav>
     )
 }
