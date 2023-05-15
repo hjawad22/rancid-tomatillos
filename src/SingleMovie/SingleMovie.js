@@ -1,5 +1,5 @@
 import React from 'react';
-import './SingleMovie.css'
+import '../SingleMovie/SingleMovie.css'
 
 const SingleMovie = ({ movie, switchState }) => {
 if(!movie) {
