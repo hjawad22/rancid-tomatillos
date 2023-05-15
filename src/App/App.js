@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Movies from '../Movies/Movies';
 import Nav from '../Nav/Nav';
+import SingleMovie from '../SingleMovie/SingleMovie';
 import '../App/App.css';
 
 class App extends Component {
@@ -42,7 +43,7 @@ class App extends Component {
            }
            return res.json()})
         .then(filteredMovieData => this.setState({
-           movie: filteredMovieData
+           movie: filteredMovieData.movie
         }))
         .catch(error => {
            console.error("There was a problem with the fetch", error)
@@ -58,29 +59,12 @@ class App extends Component {
 
 render() {
     if(this.state.movie) {
-        const {movie} = this.state.movie
-        return (
+      return ( 
         <>
-        <Nav/>
-        <main className='movie-container'>
-        <article className='image-container'>
-        <h1>{movie.title}</h1>
-        <img className='single-image' src={movie.poster_path} alt={movie.title}/>
-        <p>Rating: {movie.average_rating}</p>
-        <p>Runtime: {movie.runtime}</p>
-        <p>Revenue: ${Intl.NumberFormat().format(movie.revenue)}</p>
-        <p>Release Date: {movie.release_date}</p>
-        <button className='back-button' onClick={() => this.switchState()}>Back to Movies</button>
-        </article>
-        <article className='description-container'>
-        <h3>Movie Overview</h3>
-        <p className='overview'>{movie.overview}</p>
-        <p className='tagline'>"{movie.tagline}"</p>
-        </article>
-        </main>
-        </>
-        )
-    }
+      <Nav/>
+      <SingleMovie movie={this.state.movie} switchState={this.switchState} /> 
+      </>
+      )}
     return (
         <>
         <Nav/>
