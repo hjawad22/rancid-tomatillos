@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import '../SingleMovie/SingleMovie.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class SingleMovie extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       movie: {},
       errorMessage: ''
@@ -63,28 +64,6 @@ class SingleMovie extends Component {
 
 export default SingleMovie;
 
-//      <div className='main-movie-container'>
-//       <article className='image-container'>
-//         <h1>{movie.title}</h1>
-//         <img className='single-image' src={movie.poster_path} alt={movie.title} />
-//         <p>Rating: {movie.average_rating}</p>
-//         <p>Runtime: {movie.runtime}</p>
-//         <p>Revenue: ${Intl.NumberFormat().format(movie.revenue)}</p>
-//         <p>Release Date: {movie.release_date}</p>
-//         <Link to={"/"}>
-//         <button className='back-button' onClick={() => switchState()}>
-//           Back to Movies
-//         </button>
-//         </Link>
-//       </article>
-//       <article className='description-container'>
-//         <h3>Movie Overview</h3>
-//         <p className='overview'>{movie.overview}</p>
-//         <p className='tagline'>"{movie.tagline}"</p>
-//       </article>
-//       </div>
-    
-//   );
-// };
-
-// export default SingleMovie;
+SingleMovie.propTypes = {
+  movie: PropTypes.number
+}
