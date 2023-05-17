@@ -3,7 +3,7 @@ import Movies from '../Movies/Movies';
 import Nav from '../Nav/Nav';
 import SingleMovie from '../SingleMovie/SingleMovie';
 import '../App/App.css';
-import { Route, Switch } from 'react-router-dom'
+import { Route} from 'react-router-dom'
 
 class App extends Component {
     constructor() {
@@ -12,7 +12,6 @@ class App extends Component {
             movies: [],
             errorMessage: ''
         }
-        console.log(this.state.movies)
     }
 
     componentDidMount = () => {
@@ -33,35 +32,9 @@ class App extends Component {
         })
     }
 
-    getMovieById = (id) => {
-        const filteredMovie = this.state.movies.find(movie => movie.id === id)
-
-        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2//movies/${filteredMovie.id}/`)
-        .then(res => {
-           if(!res.ok) {
-               throw new Error('Failed to display movie details please try again!')
-           }
-           return res.json()})
-        .then(filteredMovieData => this.setState({
-           movie: filteredMovieData.movie
-        }))
-        .catch(error => {
-           console.error("There was a problem with the fetch", error)
-           this.setState({
-            errorMessage: `Error: ${error.message}`
-           })
-        })
-    }
-
-    switchState = () => {
-        this.setState({movie: null})
-    }
-
     render() {
         return (
             <>
-            {console.log(this.state.movies)}
-            {console.log(this.state.movie)}
             <Nav />
             <span className="error">{this.state.errorMessage}</span>
             <main className='App'>
