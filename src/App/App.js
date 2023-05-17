@@ -3,13 +3,13 @@ import Movies from '../Movies/Movies';
 import Nav from '../Nav/Nav';
 import SingleMovie from '../SingleMovie/SingleMovie';
 import '../App/App.css';
+import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
             movies: [],
-            movie: null,
             errorMessage: ''
         }
         console.log(this.state.movies)
@@ -57,23 +57,20 @@ class App extends Component {
         this.setState({movie: null})
     }
 
-render() {
-    if(this.state.movie) {
-      return ( 
-        <>
-      <Nav/>
-      <SingleMovie movie={this.state.movie} switchState={this.switchState} /> 
-      </>
-      )}
-    return (
-        <>
-        <Nav/>
-        <span className="error">{this.state.errorMessage}</span>
-        <main className='App'>
-        <Movies movies={this.state.movies} getMovieById={this.getMovieById}/>
-        </main>
-        </>
-    )}
+    render() {
+        return (
+            <>
+            {console.log(this.state.movies)}
+            {console.log(this.state.movie)}
+            <Nav />
+            <span className="error">{this.state.errorMessage}</span>
+            <main className='App'>
+              <Route exact path='/' render={() => (<Movies movies={this.state.movies} getMovieById={this.getMovieById} />)} />
+              <Route path="/:movieId" render={({ match }) => (<SingleMovie movie={match.params.movieId}/>)} />
+            </main>
+          </>
+        );
+      }
 }
 
 export default App;
