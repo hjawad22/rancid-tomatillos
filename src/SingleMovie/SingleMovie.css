@@ -21,3 +21,11 @@
     width: 60%;
     padding-top: 4%;
   }
+
+  .error-message {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: red;
+    font-weight: 600;
+  }
