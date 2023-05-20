@@ -4,6 +4,8 @@ import Nav from '../Nav/Nav';
 import SingleMovie from '../SingleMovie/SingleMovie';
 import '../App/App.css';
 import { Route } from 'react-router-dom';
+import Errors from '../handleErrors/Errors';
+
 
 class App extends Component {
     constructor() {
@@ -27,7 +29,6 @@ class App extends Component {
                 errorMessage: ''
             }))
             .catch(error => {
-                console.error("There was a problem with the fetch", error);
                 this.setState({
                     errorMessage: `${error.message}`
                 });
@@ -38,10 +39,10 @@ class App extends Component {
         return (
             <>
                 <Nav />
-                <h1 className="error">{this.state.errorMessage}</h1>
                 <main className='App'>
                     <Route exact path='/' render={() => (<Movies movies={this.state.movies} getMovieById={this.getMovieById} />)} />
                     <Route path="/:movieId" render={({ match }) => (<SingleMovie movie={parseInt(match.params.movieId)} />)} />
+                    <Route path="/*" render={() => (<Errors errorMessage={this.state.errorMessage} />)} />
                 </main>
             </>
         );

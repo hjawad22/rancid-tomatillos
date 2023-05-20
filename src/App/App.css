@@ -19,13 +19,3 @@
   color: white;
   font-weight: bold;
 }
-
-.error {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: red;
-  font-weight: 600;
-}
-
-
