@@ -27,17 +27,25 @@
 
 Cypress.Commands.add("getMoviesRequest", () => {
     cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/", {
-      statusCode: 200,
-      fixture: "movies"
+        statusCode: 200,
+        fixture: "movies"
     });
-  });
+});
 
-  Cypress.Commands.add("getMovieRequest", () => {
+Cypress.Commands.add("getMovieRequest", () => {
     cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270", {
-    statusCode: 200,
-    fixture: "movie"
-  });
-  });
-  
-  
- 
+        statusCode: 200,
+        fixture: "movie"
+    });
+});
+
+Cypress.Commands.add('moviesError', () => {
+    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/", {
+        statusCode: 404,
+        fixture: "movie"
+    });
+});
+
+Cypress.Commands.add('homePage', () => {
+    cy.visit("http://localhost:3000/");
+});
