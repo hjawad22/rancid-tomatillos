@@ -1,70 +1,50 @@
-# Getting Started with Create React App
-test
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Flick Finder 
 
-## Available Scripts
+## Abstract
+The Flick Finder App is a user-friendly application designed to enhance the movie exploring experience by allowing users to browse and explore multiple movies effortlessly. With this app, users can conveniently view a collection of movies and gain more insights about each film by simply clicking on their desired movie. The app provides comprehensive details for each movie, including overview, release date, ratings, and more. By offering a seamless and intuitive interface, the Flick Finder App aims to provide users with an enjoyable and informative movie exploration journey.
 
-In the project directory, you can run:
+## Preview of App
+![Preview Page](https://media.giphy.com/media/akKOA7IwTXi3fSRKaj/giphy.gif)
 
-### `npm start`
+## Context
+This application was completed over 7 days for the first group project in Module3 (week 2) of [Turing School of Software and Design](https://turing.edu/)'s Front End Engineering program. The project was built to match the specifications of [project rubric](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html), and utilized fetched data from a API that contained mock data for the movies and single movie details. Flick Finder incorporated the following:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
+* JSX
+* CSS
+* Network Requests & API data
+* Git workflow
+* React
+* Cypress
+* React Router
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Installation Guide
+### Setting up the Frontend Site
+1. Fork this [Respository](https://github.com/hjawad22/rancid-tomatillos) to your GitHub account.
+2. Copy SSH key on GitHub inside the code dropdown.
+3. Using the terminal, run git clone [SSH key here].
+4. `cd` into the repository.
+5. Open it in your text editor.
+6. Run `npm install`
+7. Run `npm start`
+8. Click the hyperlink where the project is running to launch the application in the web browser or enter http://localhost:3000/ into your web browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Contributors
+- Houda Jawad - [GitHub](https://github.com/hjawad22) | [LinkedIn](https://www.linkedin.com/in/houda-jawad-b0315675/)
+- Randy Cisneros [GitHub](https://github.com/RandyGitProjects) | [LinkedIn](https://www.linkedin.com/in/randy-cisneros-17006a191/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Wins and Challenges
+### Wins:
+- Demonstrated effective collaboration skills by working together and proactively solving problems.
+- Successfully integrated React Router into the project, enhancing the application's functionality and navigation capabilities.
+- Maintained consistent DTRs and diligently adhered to them.
+### Challenges:
+- The challenges faced included grasping the proper usage of React Router and ensuring its correct implementation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Carefully considering and determining the necessary components for the application posed another obstacle that required thoughtful analysis and planning.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
