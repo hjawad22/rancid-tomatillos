@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import '../SingleMovie/SingleMovie.css';
 import PropTypes from 'prop-types';
 import Errors from '../Errors/Errors';
+
+
+
 import { Route, Link } from 'react-router-dom';
 
 class SingleMovie extends Component {
@@ -33,7 +36,7 @@ class SingleMovie extends Component {
         console.error("There was a problem with the fetch", error);
         this.setState({
           errorMessage: `${error.message}`
-        });
+      });
       });
   };
 

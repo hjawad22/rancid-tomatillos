@@ -6,7 +6,6 @@ import '../App/App.css';
 import { Route } from 'react-router-dom';
 import Errors from '../Errors/Errors';
 
-
 class App extends Component {
     constructor() {
         super();
@@ -29,7 +28,6 @@ class App extends Component {
                 errorMessage: ''
             }))
             .catch(error => {
-                console.error("There was a problem with the fetch", error);
                 this.setState({
                     errorMessage: `${error.message}`
                 });
