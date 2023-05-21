@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import '../SingleMovie/SingleMovie.css';
 import PropTypes from 'prop-types';
-import Errors from '../handleErrors/Errors';
+import Errors from '../Errors/Errors';
+
+
+
 import { Route, Link } from 'react-router-dom';
 
 class SingleMovie extends Component {
@@ -30,6 +33,7 @@ class SingleMovie extends Component {
         errorMessage: ''
       }))
       .catch(error => {
+        console.error("There was a problem with the fetch", error);
         this.setState({
           errorMessage: `${error.message}`
       });
@@ -42,7 +46,7 @@ class SingleMovie extends Component {
         <div>
           <Route path="/*" render={() => (<Errors errorMessage={this.state.errorMessage} />)} />
           <Link to="/">
-            <button className='back-button'>Back to Movies</button>
+            <button className='back-error-button'>Back to Movies</button>
           </Link>
         </div>
       );

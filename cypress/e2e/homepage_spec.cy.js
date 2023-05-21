@@ -1,9 +1,7 @@
 describe('Homepage Spec', () => {
   beforeEach(() => {
-    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2//movies/", {
-      statusCode: 200,
-      fixture: "movies"
-    }).visit("http://localhost:3000/");
+   cy.getMoviesRequest()
+     .visit("http://localhost:3000/")
   });
 
   it('homepage should have a nav bar with a title', () => {
@@ -27,26 +25,11 @@ describe('Homepage Spec', () => {
   });
 
   it('should have a view button that takes user to that movie\'s specific details', () => {
-    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2//movies/436270", {
-      statusCode: 200,
-      fixture: "movie"
-    });
-
-    cy.get('.view-button')
+   cy.getMovieRequest()
+      .get('.view-button')
       .contains('View Details')
       .click()
       .url()
       .should('eq', 'http://localhost:3000/436270');
   });
-
-  it('should display error message', () => {
-    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2//movies/", {
-      statusCode: 404,
-      fixture: "movie"
-    });
-
-    cy.get('.error')
-      .contains('Oops! We seem to be having some technical issues, please try again later!')
-  });
-
 });

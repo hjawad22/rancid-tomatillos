@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add("getMoviesRequest", () => {
+    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/", {
+      statusCode: 200,
+      fixture: "movies"
+    });
+  });
+
+  Cypress.Commands.add("getMovieRequest", () => {
+    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270", {
+    statusCode: 200,
+    fixture: "movie"
+  });
+  });
+  
+  
+ 

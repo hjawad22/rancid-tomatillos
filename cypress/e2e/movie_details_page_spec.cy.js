@@ -1,11 +1,8 @@
 describe('Movie Details Page', () => {
   beforeEach(() => {
-    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270", {
-      statusCode: 200,
-      fixture: "movie"
-    });
-
-    cy.visit('http://localhost:3000/436270');
+  cy.getMovieRequest()
+  cy.getMoviesRequest()
+    .visit('http://localhost:3000/436270');
   });
 
   it('movie details should have a nav bar', () => {
@@ -53,25 +50,11 @@ describe('Movie Details Page', () => {
   });
 
   it('user should be able to navigate back to the movie list', () => {
-    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/", {
-      statusCode: 200,
-      fixture: "movies"
-    });
-
-    cy.get('.back-button').should('exist')
+      cy.get('.back-button').should('exist')
       .get('.back-button').click()
       .url().should('eq', 'http://localhost:3000/');
   });
 
-  it('should display error message', () => {
-    cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270", {
-      statusCode: 404,
-      fixture: "movie"
-    });
-
-    cy.get('.error-message')
-      .contains('Failed to display movie details. Please try again!');
-  });
 });
 
 

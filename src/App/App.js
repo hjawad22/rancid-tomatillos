@@ -4,8 +4,7 @@ import Nav from '../Nav/Nav';
 import SingleMovie from '../SingleMovie/SingleMovie';
 import '../App/App.css';
 import { Route } from 'react-router-dom';
-import Errors from '../handleErrors/Errors';
-
+import Errors from '../Errors/Errors';
 
 class App extends Component {
     constructor() {
