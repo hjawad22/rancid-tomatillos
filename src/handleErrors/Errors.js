@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
 import '../handleErrors/Errors.css'
 
-const NewComponent = ({ errorMessage }) => {
+const handleError = ({ errorMessage }) => {
     return (
       <div>
         {errorMessage && <p className="error">{errorMessage}</p>}
@@ -9,4 +8,4 @@ const NewComponent = ({ errorMessage }) => {
     );
   };
   
-  export default NewComponent;
+  export default handleError;

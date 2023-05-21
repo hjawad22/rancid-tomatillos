@@ -1,35 +1,47 @@
+import "../support/commands";''
+
 describe('Homepage Spec', () => {
   beforeEach(() => {
-   cy.getMoviesRequest()
-     .visit("http://localhost:3000/")
+    cy.getMoviesRequest();
+    cy.homePage();
   });
 
-  it('homepage should have a nav bar with a title', () => {
-    cy.get('Nav').contains('Flick Finder');
+  it('should have a navigation bar with a title', () => {
+    cy.get('nav').contains('Flick Finder');
   });
 
   it('should display titles and images for all movies', () => {
     cy.get('.movie-card')
       .should('have.length', 40)
-      .get('h3');
+      .each(($movieCard) => {
+        cy.wrap($movieCard).find('h3').should('be.visible');
+        cy.wrap($movieCard).find('img').should('be.visible');
+      });
   });
 
   it('should display a release date for all movies', () => {
-    cy.get('.movies-container')
-      .contains('Release Date:');
+    cy.get('.movie-card')
+      .each(($movieCard) => {
+        cy.wrap($movieCard).contains('Release Date:');
+      });
   });
 
   it('should display a button for each movie', () => {
     cy.get('.movie-card')
-      .get('.view-button');
+      .each(($movieCard) => {
+        cy.wrap($movieCard).find('button').should('be.visible');
+      });
   });
 
-  it('should have a view button that takes user to that movie\'s specific details', () => {
-   cy.getMovieRequest()
-      .get('.view-button')
+  it('should navigate to movie details page when clicking the view button', () => {
+    cy.getMovieRequest();
+
+    cy.get('.movie-card')
+      .eq(0)
+      .find('button')
       .contains('View Details')
-      .click()
-      .url()
-      .should('eq', 'http://localhost:3000/436270');
+      .click();
+
+    cy.url().should('include', 'http://localhost:3000/436270');
   });
 });
