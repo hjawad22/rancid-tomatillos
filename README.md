@@ -46,8 +46,6 @@ This application was completed over 7 days for the first group project in Module
 
 - Carefully considering and determining the necessary components for the application posed another obstacle that required thoughtful analysis and planning.
 
-##Deployed Link
-https://rancid-tomatillos-black.vercel.app/
-
-
+## Deployed Link
+[Check It Out Here](https://rancid-tomatillos-black.vercel.app/)
 
